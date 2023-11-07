@@ -8,6 +8,7 @@ import MainNav from './components/MainNav';
 import MainTopSection from './components/MainTopSection';
 import userIdAtom from './recoil/userId/atom';
 import DashboardNav from './components/DashboardNav';
+import DesktopNav from './components/DesktopNav';
 
 function App() {
   const location = useLocation();
@@ -36,11 +37,7 @@ function App() {
   }, []);
 
   if (isMobile) {
-    return (
-      <h2>
-        이 사이트는 모바일 환경을 지원하지 않습니다. 데스크탑으로 이용해주세요.
-      </h2>
-    );
+    return <DesktopNav />;
   }
 
   if (location.pathname !== '/') {
